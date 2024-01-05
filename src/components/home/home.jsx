@@ -1,6 +1,11 @@
 import Button from "../button/button";
 import { useNavigate } from "react-router-dom";
 import logoImage from "../../assets/images/logo192.png";
+import styled from "styled-components";
+
+const StyledHeading = styled.h2`
+  padding-top: 20px;
+`;
 
 function Home() {
   const navigate = useNavigate();
@@ -12,7 +17,7 @@ function Home() {
 
   return (
     <>
-      <h2>Horizon Cafe</h2>
+      <StyledHeading>Horizon Cafe</StyledHeading>
       <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua. Quam adipiscing
@@ -23,7 +28,6 @@ function Home() {
         elementum sagittis vitae et leo. Quam viverra orci sagittis eu volutpat.
         Consequat interdum varius sit amet mattis vulputate enim nulla.
       </p>
-      <img src={logoImage} alt="" />
       <Button handleClick={handleClick} value="Learn More" />
     </>
   );
