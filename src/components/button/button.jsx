@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import { useContext } from "react";
+import { HorizonContext } from "../../context";
 
 const StyledButton = styled.button`
   padding: 10px 20px;
@@ -15,8 +17,10 @@ const StyledButton = styled.button`
   }
 `;
 
-const Button = ({ value, handleClick }) => {
-  return <StyledButton onClick={handleClick}>{value}</StyledButton>;
+const Button = ({ value }) => {
+  const { services, setServices } = useContext(HorizonContext);
+
+  return <StyledButton>{value}</StyledButton>;
 };
 
 export default Button;

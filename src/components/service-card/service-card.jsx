@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import { useContext } from "react";
+import { HorizonContext } from "../../context";
 
 const StyledServices = styled.section`
   display: flex;
@@ -27,17 +29,17 @@ const StyledHeader = styled.h2`
   margin-top: 2rem;
 `;
 
-const ServiceCard = (props) => {
-  const { serviceData } = props;
+const ServiceCard = () => {
+  const { products } = useContext(HorizonContext);
 
   return (
     <StyledServices>
       <StyledHeader>Services</StyledHeader>
       <StyledCardContainer>
-        {serviceData.map((service) => {
+        {products.map((service) => {
           return (
             <StyledCard key={service.id}>
-              <StyledImage src={service.image} alt="" />
+              <StyledImage src={service.imageUrl} alt="" />
               <h5 style={{ marginTop: "5px" }}>{service.name}</h5>
               <p style={{ marginTop: "5px" }}>${service.price}</p>
             </StyledCard>

@@ -1,12 +1,11 @@
 import Hero from "../hero/hero";
 import ServiceCard from "../service-card/service-card";
 
-const Services = (props) => {
-  console.log("props", props);
+const Services = () => {
   return (
     <>
       <Hero />
-      <ServiceCard serviceData={props.serviceData} test={props.test} />
+      <ServiceCard />
     </>
   );
 };

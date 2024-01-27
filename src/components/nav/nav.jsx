@@ -31,6 +31,9 @@ function Nav() {
         <Link to="/about">
           <li>About</li>
         </Link>
+        <Link to="/add-product">
+          <li>Add Product</li>
+        </Link>
       </StyledUl>
     </StyledNav>
   );

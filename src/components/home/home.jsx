@@ -1,18 +1,37 @@
 import Button from "../button/button";
 import { useNavigate } from "react-router-dom";
-import logoImage from "../../assets/images/logo192.png";
 import styled from "styled-components";
 
 const StyledHeading = styled.h2`
   padding-top: 20px;
 `;
 
+const StyledButton = styled.button`
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #708b75;
+  margin-right: 10px;
+  color: #fff;
+  font-size: 18px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #526655;
+  }
+`;
+
 function Home() {
   const navigate = useNavigate();
 
-  const handleClick = () => {
+  const handleRegister = () => {
     console.log("clicked");
-    navigate("/about");
+    navigate("/register");
+  };
+
+  const handleLogin = () => {
+    console.log("clicked");
+    navigate("/login");
   };
 
   return (
@@ -28,7 +47,8 @@ function Home() {
         elementum sagittis vitae et leo. Quam viverra orci sagittis eu volutpat.
         Consequat interdum varius sit amet mattis vulputate enim nulla.
       </p>
-      <Button handleClick={handleClick} value="Learn More" />
+      <StyledButton onClick={handleLogin}>Login</StyledButton>
+      <StyledButton onClick={handleRegister}>Register</StyledButton>
     </>
   );
 }
